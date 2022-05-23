@@ -3,15 +3,15 @@ import {Nav,
         Navbar,
         Container, 
         Offcanvas,
-        NavDropdown,
-        Form,
-        FormControl,
-        Button,
 } from 'react-bootstrap';
 
-//import logo from '/images/icons/logo.png';
+import { Link } from 'react-router-dom';
 
-class NavigatonBar extends Component {
+
+import './NavigationBar.css'
+
+
+class NavigationBar extends Component {
   constructor(props) {
     super(props);
     this.state = {date: new Date()};  
@@ -36,61 +36,58 @@ class NavigatonBar extends Component {
   }
 */
   render() {
-    
-
-    /*
-    return (
-      <>
-        <Navbar collapseOnSelect fixed='top' bg='dark' expand='sm' variant='dark'>
-          <Container>
-            <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
-            <Navbar.Collapse id='responsive-navbar-nav'>
-              <Nav>
-                <Nav.Link href='/'> Home </Nav.Link>
-
-                <Nav.Link href='/events'> Events </Nav.Link>
-
-                <Nav.Link href='/blogs'> Blogs </Nav.Link>
-
-                 <Nav.Link href='/about'> About </Nav.Link>
-
-
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-      </>
-    );
-    */
 
     return(
       <>
         {['md'].map((expand) => (
-          <Navbar key={expand} bg="dark" variant="dark" expand={expand} className="mb-3">
+          <Navbar collapseOnSelect key={expand}  expand={expand} className="mb-3 bg-primary" variant="dark" >
             <Container fluid>
               <Navbar.Brand href="#">
-                <img width="70px" height="auto" className="img-responsive" src="/images/icons/logo.png"  alt="Le Moniteur" />
+                <img  className="img-responsive" src="/images/icons/logo.png"  alt="Le Moniteur" />
               </Navbar.Brand>
-              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} /> 
+              
               <Navbar.Offcanvas
+                
                 id={`offcanvasNavbar-expand-${expand}`}
                 aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
                 placement="end"
               >
-                <Offcanvas.Header closeButton>
+                <Offcanvas.Header closeButton >
                   <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                    Offcanvas
+                    Le Moniteur En Ligne
                   </Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
-                  <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Nav.Link href="#action1">Home</Nav.Link>
-                    <Nav.Link href="#action2">Link</Nav.Link>
+                <Offcanvas.Body className="bg-transparent">
+                  <Nav className="justify-content-end flex-grow-1 pe-3 nav-bar nav">
+                                        
+                    <Nav.Link as={Link} to="/"  href="#/" className="">
+                      <i className="fas fa-home"></i>
+                      Acceuil
+                    </Nav.Link>
+
+                    <Nav.Link as={Link} to="/formations"  href="#/formations" className="">
+                      <i className="fas fa-university"></i>
+                      Formations
+                    </Nav.Link>
+
+                    <Nav.Link href="#action3" className="">
+                      <i className="fas fa-graduation-cap"></i>
+                      Examens
+                    </Nav.Link>
+
+                    <Nav.Link href="#action4" className="">
+                      <i className="fab fa-brands fa-blogger-b"></i>
+                      Forums
+                    </Nav.Link>
+                   
+                   {/* 
                     <NavDropdown
                       title="Dropdown"
                       id={`offcanvasNavbarDropdown-expand-${expand}`}
+                      
                     >
-                      <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                      <NavDropdown.Item href="#action3" >Action</NavDropdown.Item>
                       <NavDropdown.Item href="#action4">
                         Another action
                       </NavDropdown.Item>
@@ -99,7 +96,11 @@ class NavigatonBar extends Component {
                         Something else here
                       </NavDropdown.Item>
                     </NavDropdown>
+                  */}
+
                   </Nav>
+
+                  {/* 
                   <Form className="d-flex">
                     <FormControl
                       type="search"
@@ -109,6 +110,8 @@ class NavigatonBar extends Component {
                     />
                     <Button variant="outline-success">Search</Button>
                   </Form>
+
+                  */}
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
             </Container>
@@ -119,4 +122,4 @@ class NavigatonBar extends Component {
   }
 }
 
-export default NavigatonBar;
+export default NavigationBar;

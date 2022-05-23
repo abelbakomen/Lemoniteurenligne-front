@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://use.fontawesome.com/releases/v5.0.4/css/all.css');
 
 :root {
   --mainBlue:#000080;
@@ -9,8 +10,18 @@
   
 }
 
+.bg-primary{
+  background: var(--mainBlue) !important;
+  color: var(--mainWhite);
+}
+
+
+.text-white{
+  color:var(--mainWhite);
+}
+
 body {
-  
+
   background: var(--mainWhite) !important;
   color:var(--mainDark);
   font-family: 'Roboto', sans-serif;
@@ -23,4 +34,7 @@ body {
 i {
   margin-right: 10px;
 }
-/*----------bootstrap-navbar-css------------*/
+
+.bn-primary{
+  background-color: var(--mainBlue);
+}
