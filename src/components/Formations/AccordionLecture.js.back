@@ -1,0 +1,110 @@
+import React, { Component } from "react";
+
+import { Card } from "react-bootstrap";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+class AccordionLecture extends Component {
+constructor(props){
+	super(props);
+}
+
+  	render() {
+		const {lectures} = this.props;
+
+		return (
+
+			<React.Fragment>
+
+				<div>
+
+					<Accordion defaultActiveKey="1" >
+						{
+							(typeof(lectures)==='undefined')?
+								<div class="spinner-border"></div>
+							
+							:
+								lectures.map(lecture =>(
+									<Accordion.Item eventKey="1" className='bg-'>
+										<Accordion.Header  className='bg-' >
+													<div className="row g-0  bg-">
+														<div className="col-md-4">
+															<img src={lecture.featured_image} className="img-fluid rounded-start" alt="..."/>
+														</div>
+														<div className="col-md-8">
+															<div className="card-body">
+																<h5 className="card-title text-primary"> <strong>{ lecture.name }</strong></h5>
+																<p className="card-text">{lecture.description}</p>
+															</div>
+														</div>
+													</div>
+										</Accordion.Header>
+										<Accordion.Body>
+											<ul className="">
+												<li variant="link">Partie 1</li>
+												<li variant="link">Partie 2</li>
+												<li variant="link">Partie 3</li>
+												<li variant="link">Partie 4</li>
+											</ul> 
+										</Accordion.Body>
+									</Accordion.Item>
+									
+								))
+						}
+					  <Accordion.Item eventKey="2">
+					    <Accordion.Header>Chapitre 2</Accordion.Header>
+					    <Accordion.Body>
+					      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+					      
+					    </Accordion.Body>
+					  </Accordion.Item>
+
+					  <Accordion.Item eventKey="3">
+					    <Accordion.Header>Chapitre 3</Accordion.Header>
+					    <Accordion.Body>
+					      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+					      
+					    </Accordion.Body>
+					  </Accordion.Item>
+					  <Accordion.Item eventKey="4">
+					    <Accordion.Header>Chapitre 4</Accordion.Header>
+					    <Accordion.Body>
+					      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+					      
+					    </Accordion.Body>
+					  </Accordion.Item>
+
+					  <Accordion.Item eventKey="5">
+					    <Accordion.Header>Chapitre 5</Accordion.Header>
+					    <Accordion.Body>
+					      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+					      
+					    </Accordion.Body>
+					  </Accordion.Item>
+					  <Accordion.Item eventKey="6">
+					    <Accordion.Header>Chapitre 6</Accordion.Header>
+					    <Accordion.Body>
+					      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+					      
+					    </Accordion.Body>
+					  </Accordion.Item>
+					</Accordion> 
+
+               </div>
+
+            </React.Fragment>
+
+        );
+
+    }
+
+}
+
+
+export default AccordionLecture;

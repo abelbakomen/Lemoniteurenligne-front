@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://use.fontawesome.com/releases/v5.0.4/css/all.css');
+
+:root {
+  --mainBlue:#000090;
+  --darkBlue:#000060;
+  
+  --ligthBlue:#3df9fe;
+  --mainWhite:#fefeef;
+  --mainDark:#252328;
+  --mainYellow:#ffa400;
+  
+}
+
+.bg-primary{
+  background: var(--mainBlue) !important;
+  color: var(--mainWhite);
+}
+
+
+.text-white{
+  color:var(--mainWhite);
+}
+
+
+.text-blue, .text-primary{
+  color:var(--mainBlue);
+}
+
+body {
+
+  background: var(--mainWhite) !important;
+  color:var(--mainDark);
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+i {
+  margin-right: 10px;
+}
+
+.btn-primary{
+  background-color: var(--mainBlue);
+}
+.btn-primary:hover{
+  background-color: var(--darkBlue);
+}
